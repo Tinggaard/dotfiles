@@ -1,0 +1,28 @@
+# verbosity and settings that you pretty much just always are going to want
+alias \
+    cp="cp -iv" \
+    mv="mv -iv" \
+    rm="rm -Iv" \ 
+    mkd="mkdir -pv"
+
+# spelling is hard...
+alias xea=exa
+alias eax=exa
+alias ex=exa
+
+# more abbreviations
+alias ll=exa -l
+alias la=exa -la
+
+# common commands
+alias \
+    clip="xclip -selection clipboard" \
+    e="devour neovide --nofork" \
+    g="git" \
+
+
+# Use neovim for vim if present.
+[ -x "$(command -v neovide)" ] && alias vim="neovide" vimdiff="nvim -d"
+
+# managing dotfiles
+alias config='git --git-dir=$HOME/dotfiles/ --work-tree=$HOME'

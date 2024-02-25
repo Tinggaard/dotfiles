@@ -2,6 +2,7 @@ xinput set-prop 10 "libinput Tapping Enabled" 1
 xinput set-prop 10 "libinput Natural Scrolling Enabled" 1
 
 /usr/bin/lxpolkit &
+eval "$(ssh-agent -s)"
 
 if [ -f "${XDG_CONFIG_HOME:-$HOME/.config}/x11/xprofile" ]; then
     . "${XDG_CONFIG_HOME:-$HOME/.config}/x11/xprofile"

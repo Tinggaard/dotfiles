@@ -19,6 +19,12 @@ local hotkeys_popup = require("awful.hotkeys_popup")
 -- when client with a matching name is opened:
 require("awful.hotkeys_popup.keys")
 
+-- custom widgets
+local volume_widget = require("awesome-wm-widgets.pactl-widget.volume")
+local brightness_widget = require("awesome-wm-widgets.brightness-widget.brightness")
+local batteryarc_widget = require("awesome-wm-widgets.batteryarc-widget.batteryarc")
+
+
 -- Set wallpaper
 beautiful.wallpaper = "$HOME/Pictures/wallpapers/wallpaper.jpg"
 
@@ -206,6 +212,8 @@ awful.screen.connect_for_each_screen(function(s)
     -- Create the wibox
     s.mywibox = awful.wibar({ position = "top", screen = s })
 
+    local separator = wibox.widget.textbox("    |    ")
+
     -- Add widgets to the wibox
     s.mywibox:setup {
         layout = wibox.layout.align.horizontal,
@@ -219,8 +227,32 @@ awful.screen.connect_for_each_screen(function(s)
         { -- Right widgets
             layout = wibox.layout.fixed.horizontal,
             mykeyboardlayout,
+	    seperator,
             wibox.widget.systray(),
+	    seperator,
             mytextclock,
+
+
+		    volume_widget({
+		    widget_type = "arc",
+	    }),
+
+	    brightness_widget({
+		    type = "arc",
+		    program = "xbacklight",
+		    step = 0.1,
+		    timeout = 1,
+		    max_brightness = 1,
+	    }),
+
+	    batteryarc_widget({
+		    show_current_level = true,
+		    arc_thickness = 2,
+		    size = 20,
+	    }),
+
+
+	    seperator,
             s.mylayoutbox,
         },
     }
