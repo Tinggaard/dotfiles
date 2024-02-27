@@ -1,3 +1,25 @@
 [user]
 	email = mail@t1ng.dk
 	name = Jens Tinggaard
+	signingkey = AC79D010F6A474B7
+
+[core]
+	pager = delta
+
+[commit]
+	gpgsign = true
+
+[interactive]
+    diffFilter = delta --color-only
+
+[delta]
+    navigate = true    # use n and N to move between diff sections
+    light = false      # set to true if you're in a terminal w/ a light background color (e.g. the default macOS terminal)
+    line-numbers = true
+    side-by-side = true
+
+[merge]
+    conflictstyle = diff3
+
+[diff]
+    colorMoved = default

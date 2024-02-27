@@ -23,3 +23,6 @@ eval "$(starship init zsh)"
 
 # aliases
 [ -f "${XDG_CONFIG_HOME:-$HOME/.config}/shell/aliasrc" ] && source "${XDG_CONFIG_HOME:-$HOME/.config}/shell/aliasrc"
+
+# allow reverse searching
+bindkey "^R" history-incremental-search-backward
