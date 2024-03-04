@@ -11,8 +11,19 @@ alias eax=exa
 alias ex=exa
 
 # more abbreviations
-alias ll=exa -l
-alias la=exa -la
+alias ll="exa -l"
+alias la="exa -la"
+
+# git stuff
+alias g=git
+alias gp="git push"
+alias gl="git pull"
+alias gc="git commit"
+alias gbr="git branch"
+alias gd="git diff"
+alias gst="git status"
+
+
 
 # common commands
 alias \

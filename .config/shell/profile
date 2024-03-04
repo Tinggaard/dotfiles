@@ -7,6 +7,10 @@ export GIT_CONFIG_GLOBAL=$HOME/.config/git/config
 export MANPAGER="sh -c 'col -bx | bat -l man -p'"
 export MANROFFOPT="-c"
 
+if [ -d "$HOME/.local/bin" ]; then
+    PATH=$PATH:"$HOME/.local/bin"
+fi
+
 
 export XDG_CONFIG_HOME="$HOME/.config"
 export XDG_DATA_HOME="$HOME/.local/share"
