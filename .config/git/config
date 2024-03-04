@@ -23,3 +23,45 @@
 
 [diff]
     colorMoved = default
+[alias]
+	# this is the most important one!
+	yolo = !git add -A && git commit -m \"$(curl --silent --fail https://whatthecommit.com/index.txt)\"
+
+	default-branch = !git symbolic-ref refs/remotes/origin/HEAD | cut -d'/' -f4
+	current-branch = rev-parse --abbrev-ref HEAD
+
+	a = add
+	aa = add --all
+	ap = add --patch
+
+	b = branch
+	bb = !better-branch.sh
+	br = branch --format='%(HEAD) %(color:yellow)%(refname:short)%(color:reset) - %(contents:subject) %(color:green)(%(committerdate:relative)) [%(authorname)]' --sort=-committerdate
+
+	c = commit
+	ca = commit -a
+	cm = commit -m
+	cam = commit -am
+	cane = commit --amend --no-edit
+
+	d = diff
+	ds = diff --staged
+	stat = diff --stat
+
+	l = log
+
+	lg = !git log --pretty=format:\"%C(magenta)%h%Creset -%C(red)%d%Creset %s %C(dim green)(%cr) [%an]\" --abbrev-commit -30
+	graph = log --graph --oneline --all
+
+	p = "!git push origin $(git current-branch)"
+	pushf == push --force-with-lease
+
+	pl = pull --ff-only
+
+	s = status
+	ss = status --short
+
+	sw = switch
+	sd = "!git switch $(git default-branch)"
+
+	unadd = restore --staged
