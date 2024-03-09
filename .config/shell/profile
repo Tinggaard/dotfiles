@@ -11,6 +11,10 @@ if [ -d "$HOME/.local/bin" ]; then
     PATH=$PATH:"$HOME/.local/bin"
 fi
 
+if [ -d "$HOME/.dotnet/tools" ]; then
+    PATH=$PATH:"$HOME/.dotnet/tools"
+fi
+
 
 export XDG_CONFIG_HOME="$HOME/.config"
 export XDG_DATA_HOME="$HOME/.local/share"
