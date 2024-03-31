@@ -18,9 +18,6 @@
     line-numbers = true
     side-by-side = true
 
-[merge]
-    conflictstyle = diff3
-
 [diff]
     colorMoved = default
 [alias]
@@ -28,7 +25,6 @@
 	yolo = !git add -A && git commit -m \"$(curl --silent --fail https://whatthecommit.com/index.txt)\"
 
 	default-branch = !git symbolic-ref refs/remotes/origin/HEAD | cut -d'/' -f4
-	current-branch = rev-parse --abbrev-ref HEAD
 
 	a = add
 	aa = add --all
@@ -44,6 +40,8 @@
 	cam = commit -am
 	cane = commit --amend --no-edit
 
+  co = checkout
+
 	d = diff
 	ds = diff --staged
 	stat = diff --stat
@@ -53,15 +51,25 @@
 	lg = !git log --pretty=format:\"%C(magenta)%h%Creset -%C(red)%d%Creset %s %C(dim green)(%cr) [%an]\" --abbrev-commit -30
 	graph = log --graph --oneline --all
 
-	p = "!git push origin $(git current-branch)"
-	pushf == push --force-with-lease
+	p = push origin -u HEAD
+  pf = push --force-with-lease
+	pushf = push --force-with-lease
 
 	pl = pull --ff-only
+  plr = pull --rebase
+
+  rb = rebase
+  rbm = "!git rebase $(git default-branch)"
+
+  rs = restore
+  rss = restore --staged
+	unadd = restore --staged
+
+  rst = reset
 
 	s = status
 	ss = status --short
 
 	sw = switch
+  swc = switch -c 
 	sd = "!git switch $(git default-branch)"
-
-	unadd = restore --staged
