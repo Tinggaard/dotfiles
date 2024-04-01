@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 dir="$HOME/.config/polybar"
-themes=(`ls --hide="launch.sh" $dir`)
+themes=($(ls --hide="launch.sh" $dir))
 
 launch_bar() {
 	# Terminate already running bar instances
@@ -17,7 +17,10 @@ launch_bar() {
 	elif [[ "$style" == "pwidgets" ]]; then
 		bash "$dir"/pwidgets/launch.sh --main
 	else
-		polybar -q main -c "$dir/$style/config.ini" &	
+		for m in $(polybar -m | cut -d":" -f1); do
+			MONITOR=$m polybar -q main -c "$dir/$style/config.ini" &
+		done
+		# polybar -q main -c "$dir/$style/config.ini" &
 	fi
 }
 
@@ -70,12 +73,12 @@ elif [[ "$1" == "--panels" ]]; then
 	launch_bar
 
 else
-	cat <<- EOF
-	Usage : launch.sh --theme
-		
-	Available Themes :
-	--blocks    --colorblocks    --cuts      --docky
-	--forest    --grayblocks     --hack      --material
-	--panels    --pwidgets       --shades    --shapes
+	cat <<-EOF
+		Usage : launch.sh --theme
+
+		Available Themes :
+		--blocks    --colorblocks    --cuts      --docky
+		--forest    --grayblocks     --hack      --material
+		--panels    --pwidgets       --shades    --shapes
 	EOF
 fi
