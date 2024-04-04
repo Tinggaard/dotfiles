@@ -1,61 +1,64 @@
 [user]
-	email = mail@t1ng.dk
-	name = Jens Tinggaard
-	signingkey = AC79D010F6A474B7
+  email = mail@t1ng.dk
+  name = Jens Tinggaard
+  signingkey = AC79D010F6A474B7
 
 [core]
-	pager = delta
+  editor = nvim
+  pager = delta
 
 [commit]
-	gpgsign = true
+  gpgsign = true
 
 [interactive]
-    diffFilter = delta --color-only
+  diffFilter = delta
 
 [delta]
-    navigate = true    # use n and N to move between diff sections
-    light = false      # set to true if you're in a terminal w/ a light background color (e.g. the default macOS terminal)
-    line-numbers = true
-    side-by-side = true
+  navigate = true    # use n and N to move between diff sections
+  dark = true
+  line-numbers = true
+  side-by-side = true
 
 [diff]
-    colorMoved = default
+  colorMoved = default
+
 [alias]
-	# this is the most important one!
-	yolo = !git add -A && git commit -m \"$(curl --silent --fail https://whatthecommit.com/index.txt)\"
+  # this is the most important one!
+  yolo = !git add -A && git commit -m \"$(curl --silent --fail https://whatthecommit.com/index.txt)\"
 
-	default-branch = !git symbolic-ref refs/remotes/origin/HEAD | cut -d'/' -f4
+  default-branch = !git symbolic-ref refs/remotes/origin/HEAD | cut -d'/' -f4
 
-	a = add
-	aa = add --all
-	ap = add --patch
+  a = add
+  aa = add -a
+  ap = add -p
 
-	b = branch
-	bb = !better-branch.sh
-	br = branch --format='%(HEAD) %(color:yellow)%(refname:short)%(color:reset) - %(contents:subject) %(color:green)(%(committerdate:relative)) [%(authorname)]' --sort=-committerdate
+  b = branch
+  bb = !better-branch.sh
+  br = branch --format='%(HEAD) %(color:yellow)%(refname:short)%(color:reset) - %(contents:subject) %(color:green)(%(committerdate:relative)) [%(authorname)]' --sort=-committerdate
 
-	c = commit
-	ca = commit -a
-	cm = commit -m
-	cam = commit -am
-	cane = commit --amend --no-edit
+  c = commit
+  ca = commit -a
+  cm = commit -m
+  cam = commit -am
+  amend = commit --amend 
+  cane = commit --amend --no-edit
 
   co = checkout
 
-	d = diff
-	ds = diff --staged
-	stat = diff --stat
+  d = diff
+  ds = diff --staged
+  stat = diff --stat
 
-	l = log
+  l = log
 
-	lg = !git log --pretty=format:\"%C(magenta)%h%Creset -%C(red)%d%Creset %s %C(dim green)(%cr) [%an]\" --abbrev-commit -30
-	graph = log --graph --oneline --all
+  lg = !git log --pretty=format:\"%C(magenta)%h%Creset -%C(red)%d%Creset %s %C(dim green)(%cr) [%an]\" --abbrev-commit -30
+  graph = log --graph --oneline --all
 
-	p = push origin -u HEAD
+  p = push origin -u HEAD
   pf = push --force-with-lease
-	pushf = push --force-with-lease
+  pushf = push --force-with-lease
 
-	pl = pull --ff-only
+  pl = pull --ff-only
   plr = pull --rebase
 
   rb = rebase
@@ -63,13 +66,13 @@
 
   rs = restore
   rss = restore --staged
-	unadd = restore --staged
+  unadd = restore --staged
 
   rst = reset
 
-	s = status
-	ss = status --short
+  s = status
+  ss = status --short
 
-	sw = switch
+  sw = switch
   swc = switch -c 
-	sd = "!git switch $(git default-branch)"
+  sd = "!git switch $(git default-branch)"
