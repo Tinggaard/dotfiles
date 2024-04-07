@@ -1,40 +1,32 @@
 # verbosity and settings that you pretty much just always are going to want
 alias \
-    cp="cp -iv" \
-    mv="mv -iv" \
-    rm="rm -Iv" \ 
-    mkd="mkdir -pv"
+  cp="cp -iv" \
+  mv="mv -iv" \
+  rm="rm -Iv" \ 
+  mkd="mkdir -pv"
 
 # spelling is hard...
-alias xea=exa
-alias eax=exa
-alias ex=exa
+alias \
+  exa=eza \
+  xea=eza \
+  eax=eza \
+  ex=eza
 
 # more abbreviations
-alias ll="exa -l"
-alias la="exa -la"
+alias \
+  ll="eza -l" \
+  la="eza -la"
 
 # git stuff
-alias g=git
-alias gp="git push"
-alias gl="git pull"
-alias gc="git commit"
-alias gbr="git branch"
-alias gd="git diff"
-alias gst="git status"
-alias gsw="git switch"
+alias g=git \ 
+  gp="git push" \
+  gl="git pull"
 
+# use zoxide as cd
+alias cd=z
 
-
-# common commands
-alias \
-    clip="xclip -selection clipboard" \
-    e="devour neovide --nofork" \
-    g="git" \
-
-
-# Use neovim for vim if present.
-[ -x "$(command -v neovide)" ] && alias vim="neovide" vimdiff="nvim -d"
+alias clip="xclip -selection clipboard"
+alias vimdiff="nvim -d"
 
 # managing dotfiles
 alias config='git --git-dir=$HOME/dotfiles/ --work-tree=$HOME'

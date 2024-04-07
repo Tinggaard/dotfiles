@@ -29,7 +29,7 @@
   default-branch = !git symbolic-ref refs/remotes/origin/HEAD | cut -d'/' -f4
 
   a = add
-  aa = add -a
+  aa = add -A
   ap = add -p
 
   b = branch
@@ -41,17 +41,20 @@
   cm = commit -m
   cam = commit -am
   amend = commit --amend 
-  cane = commit --amend --no-edit
+  cane = commit -a --amend --no-edit
 
   co = checkout
+
+  cp = cherry-pick
+
+  # set editor to "true" so it exists immediately (no edit)
+  continue = "-c core.editor=true rebase --continue"
 
   d = diff
   ds = diff --staged
   stat = diff --stat
 
   l = log
-
-  lg = !git log --pretty=format:\"%C(magenta)%h%Creset -%C(red)%d%Creset %s %C(dim green)(%cr) [%an]\" --abbrev-commit -30
   graph = log --graph --oneline --all
 
   p = push origin -u HEAD
@@ -64,6 +67,8 @@
   rb = rebase
   rbm = "!git rebase $(git default-branch)"
 
+  rl = reflog
+
   rs = restore
   rss = restore --staged
   unadd = restore --staged
@@ -72,6 +77,9 @@
 
   s = status
   ss = status --short
+
+  st = stash -u
+  pop = stash pop
 
   sw = switch
   swc = switch -c 

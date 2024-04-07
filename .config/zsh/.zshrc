@@ -15,8 +15,6 @@ autoload -Uz compinit && compinit
 # match insensitive if there are no other results
 zstyle ':completion:*' matcher-list '' 'm:{a-zA-Z}={A-Za-z}'
 
-
-
 # start x
 if [[ -z $DISPLAY ]] && [[ $(tty) = /dev/tty1 ]]; then
 	startx
@@ -30,3 +28,5 @@ eval "$(starship init zsh)"
 
 # allow reverse searching
 bindkey "^R" history-incremental-search-backward
+
+eval "$(zoxide init zsh)"
