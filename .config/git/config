@@ -11,7 +11,7 @@
   gpgsign = true
 
 [interactive]
-  diffFilter = delta
+  diffFilter = delta --color-only
 
 [delta]
   navigate = true    # use n and N to move between diff sections
@@ -54,8 +54,10 @@
   ds = diff --staged
   stat = diff --stat
 
-  l = log
+  # l = log
   graph = log --graph --oneline --all
+  l = log --date-order --date=iso --graph --full-history --all --pretty=format:'%x08%x09%C(red)%h %C(cyan)%ad%x08%x08%x08%x08%x08%x08%x08%x08%x08%x08%x08%x08%x08%x08%x08 %C(bold blue)%aN%C(reset)%C(bold yellow)%d %C(reset)%s'
+
 
   p = push origin -u HEAD
   pf = push --force-with-lease
@@ -66,6 +68,7 @@
 
   rb = rebase
   rbm = "!git rebase $(git default-branch)"
+  frbm = "!git fetch origin && git rebase origin/$(git default-branch)"
 
   rl = reflog
 

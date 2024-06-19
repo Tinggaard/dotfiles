@@ -36,9 +36,9 @@ i3lock \
 	\
 	--verif-font="Calvin and Hobbes" \
 	--verif-size=150 \
-	--verif-text="Welcome" \
+	--verif-text="Verifying..." \
 	\
 	--wrong-font="Calvin and Hobbes" \
 	--wrong-size=150 \
-	--wrong-text="No Entry!" \
+	--wrong-text="That was not it" \
 	--image=$HOME/Pictures/wallpapers/calvin-and-hobbes.png
