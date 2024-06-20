@@ -2,7 +2,7 @@
 alias \
   cp="cp -iv" \
   mv="mv -iv" \
-  rm="rm -Iv" \ 
+  rm="rm -Iv" \
   mkd="mkdir -pv"
 
 # spelling is hard...
@@ -18,15 +18,16 @@ alias \
   la="eza -la"
 
 # git stuff
-alias g=git \ 
+alias g=git \
   gp="git push" \
   gl="git pull"
 
 # use zoxide as cd
 alias cd=z
 
+alias vim="devour neovide --no-fork"
 alias clip="xclip -selection clipboard"
-alias vimdiff="nvim -d"
+alias vimdiff="devour neovide --no-fork -- -d"
 
 # managing dotfiles
 alias config='git --git-dir=$HOME/dotfiles/ --work-tree=$HOME'
