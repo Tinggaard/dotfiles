@@ -43,6 +43,8 @@
   amend = commit --amend 
   cane = commit -a --amend --no-edit
 
+  cl = clone
+
   co = checkout
 
   cp = cherry-pick
@@ -54,9 +56,9 @@
   ds = diff --staged
   stat = diff --stat
 
-  # l = log
+  # graph, hash, sign, relative date, author, subject, stashes, refs
+  l = log --date-order --date=relative --graph --full-history --all --format='%x08%x09%C(yellow)%h %C(magenta)%G? %C(blue)%ad %C(green)%aN %C(reset)%s%C(auto)%gD%d'
   graph = log --graph --oneline --all
-  l = log --date-order --date=iso --graph --full-history --all --pretty=format:'%x08%x09%C(red)%h %C(cyan)%ad%x08%x08%x08%x08%x08%x08%x08%x08%x08%x08%x08%x08%x08%x08%x08 %C(bold blue)%aN%C(reset)%C(bold yellow)%d %C(reset)%s'
 
 
   p = push origin -u HEAD
@@ -87,3 +89,5 @@
   sw = switch
   swc = switch -c 
   sd = "!git switch $(git default-branch)"
+[tag]
+	gpgsign = true

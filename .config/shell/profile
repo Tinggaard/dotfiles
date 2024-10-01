@@ -2,7 +2,7 @@
 
 export EDITOR="nvim"
 export BROWSER="firefox"
-export TERMINAL="ALACRITTY"
+export TERMINAL="alacritty"
 export GIT_CONFIG_GLOBAL=$HOME/.config/git/config
 export MANPAGER="sh -c 'col -bx | bat -l man -p'"
 export MANROFFOPT="-c"
@@ -31,8 +31,6 @@ export GEM_HOME="$HOME/.local/share/gem"
 
 # Microsoft telemetry opt-out
 export DOTNET_CLI_TELEMETRY_OPTOUT=1
-
-export LG_WEBOS_TV_SDK_HOME="/usr/share/webOS_TV_SDK"
 
 # suggest history first, fallback to completion engine
 export ZSH_AUTOSUGGEST_STRATEGY=(history completion)
