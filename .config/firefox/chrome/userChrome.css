@@ -1,0 +1,11 @@
+/*Set toolkit.legacyUserProfileCustomizations.stylesheets to true in about:config*/
+
+/*hides the title bar*/
+#titlebar {
+  visibility: collapse;
+}
+
+/*hide TST title bar*/
+#sidebar-box[sidebarcommand="treestyletab_piro_sakura_ne_jp-sidebar-action"] #sidebar-header {
+  display: none;
+}
