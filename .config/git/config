@@ -22,6 +22,18 @@
 [diff]
   colorMoved = default
 
+[rerere]
+  enabled = true
+
+[tag]
+  gpgsign = true
+
+[gpg "ssh"]
+  allowedSignersFile = /home/t1ng/.config/git/allowed_signers
+
+[init]
+  defaultBranch = main
+
 [alias]
   # this is the most important one!
   yolo = !git add -A && git commit -m \"$(curl --silent --fail https://whatthecommit.com/index.txt)\"
@@ -89,5 +101,3 @@
   sw = switch
   swc = switch -c 
   sd = "!git switch $(git default-branch)"
-[tag]
-	gpgsign = true

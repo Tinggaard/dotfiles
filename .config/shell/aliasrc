@@ -7,15 +7,14 @@ alias \
 
 # spelling is hard...
 alias \
-  exa=eza \
-  xea=eza \
-  eax=eza \
-  ex=eza
+  xea="eza --icons" \
+  eax="eza --icons" \
+  ex="eza --icons"
 
 # more abbreviations
 alias \
-  ll="eza -l" \
-  la="eza -la"
+  ll="eza -l --icons" \
+  la="eza -la --icons"
 
 # git stuff
 alias g=git \
@@ -25,9 +24,14 @@ alias g=git \
 # use zoxide as cd
 alias cd=z
 
-alias vim="devour neovide --no-fork"
 alias clip="xclip -selection clipboard"
-alias vimdiff="devour neovide --no-fork -- -d"
 
 # managing dotfiles
 alias config='git --git-dir=$HOME/dotfiles/ --work-tree=$HOME'
+
+# weather
+alias weather="curl -H \"Accept-Language: da\" wttr.in/Aalborg"
+
+# python
+alias venv="python -m venv venv"
+alias activate=". ./venv/bin/activate"

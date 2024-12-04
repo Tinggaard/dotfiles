@@ -1,11 +1,12 @@
 #!/bin/sh
 
 if [ "$1" = "home" ]; then
-	xrandr --output eDP-1 --primary --mode 1920x1200 --pos 5120x240 --rotate normal --output HDMI-1 --off --output DP-1 --off --output DP-2 --off --output DP-3 --off --output DP-4 --off --output DP-3-1 --mode 5120x1440 --pos 0x0 --rotate normal --output DP-3-2 --off --output DP-3-3 --off
-	xinput --set-prop "Logitech USB Receiver" "libinput Accel Speed" -0.5
-	i3-msg restart
+  xrandr --output eDP-1 --primary --mode 1920x1200 --pos 5120x240 --rotate normal --output HDMI-1 --off --output DP-1 --off --output DP-2 --off --output DP-3 --off --output DP-4 --off --output DP-3-1 --mode 5120x1440 --pos 0x0 --rotate normal --output DP-3-2 --off --output DP-3-3 --off
+  xinput --set-prop "Logitech USB Receiver" "libinput Accel Speed" -0.5
+  feh --bg-fill "$HOME/Pictures/wallpapers/earth.jpg"
+  i3-msg restart
 
 elif [ "$1" = "away" ]; then
-	xrandr --output eDP-1 --primary --mode 1920x1200 --pos 0x0 --rotate normal --output HDMI-1 --off --output DP-1 --off --output DP-2 --off --output DP-3 --off --output DP-4 --off --output DP-3-1 --off --output DP-3-2 --off --output DP-3-3 --off
-	i3-msg restart
+  xrandr --output eDP-1 --primary --mode 1920x1200 --pos 0x0 --rotate normal --output HDMI-1 --off --output DP-1 --off --output DP-2 --off --output DP-3 --off --output DP-4 --off --output DP-3-1 --off --output DP-3-2 --off --output DP-3-3 --off
+  i3-msg restart
 fi

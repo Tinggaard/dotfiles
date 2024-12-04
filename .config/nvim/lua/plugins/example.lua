@@ -13,6 +13,11 @@ if true then
       "neovim/nvim-lspconfig",
       opts = { autoformat = false },
     },
+    {
+      "kaarmu/typst.vim",
+      ft = "typst",
+      lazy = false,
+    },
   }
 end
 

@@ -2,10 +2,15 @@
 
 export EDITOR="nvim"
 export BROWSER="firefox"
-export TERMINAL="alacritty"
+export TERMINAL="wezterm"
 export GIT_CONFIG_GLOBAL=$HOME/.config/git/config
 export MANPAGER="sh -c 'col -bx | bat -l man -p'"
 export MANROFFOPT="-c"
+# setup fzf to use fd
+export FZF_DEFAULT_COMMAND="fd --type file --follow --hidden --exclude '.git' --color=always"
+export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
+export FZF_ALT_C_COMMAND="fd --type directory '' $HOME"
+export FZF_DEFAULT_OPTS="--ansi --preview-window 'right:40%' --preview 'bat --color=always --style=header,grid --line-range :300 {}'"
 
 if [ -d "$HOME/.local/bin" ]; then
     PATH=$PATH:"$HOME/.local/bin"
